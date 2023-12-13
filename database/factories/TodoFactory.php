@@ -21,6 +21,7 @@ class TodoFactory extends Factory
             "user_id" => fake()->randomElement(User::pluck("id")),
             "title" => fake()->sentence(),
             "task" => fake()->paragraph(),
+            "image" => "eU5IJBwiZwJ3MLppLd5dokET5ciSs4QHrU3xub0Q.jpg",
             "status" => fake()->randomElement(["Not Started", "Ongoing", "Completed"])
         ];
     }

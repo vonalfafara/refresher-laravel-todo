@@ -22,6 +22,7 @@ class TodoController extends Controller
     {
         $fields = $request->validate([
             "title" => "required|string",
+            "image" => "nullable|string",
             "task" => "required|string"
         ]);
 
@@ -29,6 +30,7 @@ class TodoController extends Controller
             "user_id" => auth()->user()->id,
             "title" => $fields["title"],
             "task" => $fields["task"],
+            "image" => $fields["image"],
             "status" => "Not Started"
         ]);
 

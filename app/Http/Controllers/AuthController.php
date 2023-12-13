@@ -17,9 +17,9 @@ class AuthController extends Controller
         $user = User::where("email", $fields["email"])->first();
 
         if (!$user || !Hash::check($fields["password"], $user->password)) {
-            return [
+            return response([
                 "message" => "Authentication failed"
-            ];
+            ], 403);
         }
 
         $token = $user->createToken("test")->plainTextToken;
