@@ -69,7 +69,8 @@ class TodoController extends Controller
         $fields = $request->validate([
             "title" => "required|string",
             "task" => "required|string",
-            "status" => "required|string"
+            "status" => "required|string",
+            "image" => "required|string"
         ]);
 
         $todo->update($fields);
